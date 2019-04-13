@@ -24,7 +24,7 @@ const File = new mongoose.Schema({
 File.virtual("url").get(function() {
     const url = process.env.URL || "http://localhost:3333";
 
-    return `http://localhost:3333/files/${encodeURIComponent(this.path)}`;
+    return `${url}/files/${encodeURIComponent(this.path)}`;
 });
 
 // exportando o model
